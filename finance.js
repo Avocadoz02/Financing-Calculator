@@ -8,7 +8,7 @@ var Finance = Price - DownCash - Discount
 console.log("ยอดจัดไฟแนนซ์ = " + Finance + " บาท")
 
 /* ยอดจัดไฟแนนซ์ x เปอร์เซ็นต์อัตราดอกเบี้ย = FinanceInterest */
-var Interest = 4/100
+var Interest = 3.49/100
 var FinanceInterest = Finance * Interest
 console.log("ยอดจัด*ดอกเบี้ย = " + FinanceInterest + " บาท/ปี")
 
