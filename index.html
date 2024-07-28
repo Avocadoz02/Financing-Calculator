@@ -7,24 +7,45 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form class="" action="/action_page.php" onsubmit="return myFunction()">
-            <div class="price-form">
-                <p>Price (Baht) :</p>
-                <input type="text" id="price" inputmode="numeric">
+        <section class="form-section">
+            <form class="finance-form" action="/action_page.php" onsubmit="return myFunction()">
+                <div class="price-form input-form">
+                    <p>ราคา (บาท) :</p>
+                    <input type="number" id="price">
+                </div>
+                <div class="discount-form input-form">
+                    <p>ส่วนลด (บาท) :</p>
+                    <input type="number" id="discount">
+                </div>
+                <div class="interest-form input-form">
+                    <p>อัตราดอกเบี้ย (%) :</p>
+                    <input type="number" id="interest">
+                </div>
+                <div class="downcash-form input-form">
+                    <p>เปอร์เซ็นต์เงินดาวน์ (%) :</p>
+                    <input type="number" id="downcash">
+                </div>
+                <input class="submit-form" type="submit" value="Submit"> 
+            </form>
+            <div class="result-container">
+                <h3 class="result-title">ผลลัพท์</h3>
+                <table class="result-table">
+                    <tr>
+                        <th>เงินดาวน์ (%)</th>
+                        <th>24 เดือน</th>
+                        <th>36 เดือน</th>
+                        <th>48 เดือน</th>
+                        <th>60 เดือน</th>
+                      </tr>
+                      <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                      </tr>
+                </table>
             </div>
-            <div class="discount-form">
-                <p>Discount (Baht) :</p>
-                <input type="text" id="discount" inputmode="numeric">
-            </div>
-            <div class="interest-form">
-                <p>Interest Percent (%) :</p>
-                <input type="text" id="interest" inputmode="numeric">
-            </div>
-            <div class="downcash-form">
-                <p>Downcash Percent (%) :</p>
-                <input type="text" id="downcash" inputmode="numeric">
-            </div>
-            <input class="submit-form" type="submit" value="Submit"> 
-          </form>
+        </section>
     </body>
 </html>
