@@ -3,15 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Finance Calculate</title>
         <link rel="stylesheet" href="style.css">
+        <script src="/finance.js"></script>
     </head>
     <body>
         <section class="form-section">
-            <form class="finance-form" action="/action_page.php" onsubmit="return myFunction()">
+            <form class="finance-form" onsubmit="return PaymentFunc()">
                 <div class="price-form input-form">
                     <p>ราคา (บาท) :</p>
                     <input type="number" id="price">
+                </div>
+                <div class="downcash-form input-form">
+                    <p>เปอร์เซ็นต์เงินดาวน์ (%) :</p>
+                    <input type="number" id="downcash">
                 </div>
                 <div class="discount-form input-form">
                     <p>ส่วนลด (บาท) :</p>
@@ -21,30 +26,57 @@
                     <p>อัตราดอกเบี้ย (%) :</p>
                     <input type="number" id="interest">
                 </div>
-                <div class="downcash-form input-form">
-                    <p>เปอร์เซ็นต์เงินดาวน์ (%) :</p>
-                    <input type="number" id="downcash">
-                </div>
                 <input class="submit-form" type="submit" value="Submit"> 
             </form>
             <div class="result-container">
-                <h3 class="result-title">ผลลัพท์</h3>
-                <table class="result-table">
-                    <tr>
-                        <th>เงินดาวน์ (%)</th>
-                        <th>24 เดือน</th>
-                        <th>36 เดือน</th>
-                        <th>48 เดือน</th>
-                        <th>60 เดือน</th>
-                      </tr>
-                      <tr>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
-                        <td>Germany</td>
-                        <td>Germany</td>
-                        <td>Germany</td>
-                      </tr>
-                </table>
+                <h3 class="result-title">ผลลัพธ์</h3>
+                <div class="result-table-box">
+                    <table class="result-table">
+                        <tr class="table-head">
+                            <th rowspan="2">เงินดาวน์</th>
+                            <th rowspan="2">%</th>
+                            <th colspan="4">ระยะการผ่อน</th>
+                        </tr>
+                        <tr class="table-sub-head">
+                            <th>24 เดือน</th>
+                            <th>36 เดือน</th>
+                            <th>48 เดือน</th>
+                            <th>60 เดือน</th>
+                        </tr>
+                        <tr class="row-1 row">
+                            <td>123</td>
+                            <td>40%</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr class="row-2 row">
+                            <td>123</td>
+                            <td>30%</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr class="row-3 row">
+                            <td>123</td>
+                            <td>20%</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr class="row-4 row">
+                            <td>123</td>
+                            <td>10%</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </section>
     </body>

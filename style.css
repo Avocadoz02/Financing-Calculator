@@ -8,7 +8,12 @@ body, *{
 
 body{
     background-color: rgb(240, 240, 240);
+    background: linear-gradient(90deg, rgba(82,34,88,1) 0%, rgba(140,48,97,1) 40%, rgba(217,95,89,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 60px;
 }
+
 .form-section{
     max-width: 1200px;
     height: 100vh;
@@ -37,6 +42,9 @@ body{
                 font-size: 18px;
                 font-weight: 500;
                 line-height: 1em;
+            }
+            @media (max-width:767px){
+                p{ font-size: 16px; }
             }
             input{
                 width: 100%;
@@ -89,8 +97,78 @@ body{
         background-color: #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
+        .result-title{
+            margin-bottom: 10px;
+            font-size: 32px;
+            background: #522258;
+            background: linear-gradient(to right, #522258 0%, #D95F59 15%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;            
+        }
+
         .result-table{
             width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+            text-align: center;
+
+            tr{
+                &.table-head th{
+                    font-size: 20px;
+                }
+                @media (max-width:767px){
+                    &.table-head th{
+                        font-size: 18px;
+                    }
+                }
+                &.table-head , &.table-sub-head{
+                    background: linear-gradient(90deg, rgba(82,34,88,1) 0%, rgba(140,48,97,1) 40%, rgba(217,95,89,1) 100%)!important;
+                    color: #fff;
+                }
+                &:nth-child(even){
+                    background: #eeeeee;
+                }
+            } 
+        }
+        th {
+            border: 1px solid;
+            padding: 8px;
+        }
+        td{
+            padding:8px;
+            font-size: 14px;
+        }
+    }     
+}
+
+@media (max-width:1023px){
+    body{ padding: 80px 30px; }
+
+    .form-section{
+        flex-direction: column;
+        height: unset;
+        
+        .finance-form{
+            min-width: 500px;
+        }
+    }
+}
+@media (max-width:767px){
+    body{ padding: 55px 20px; }
+    .form-section {
+        .finance-form{
+            min-width: unset;
+            width: 100%;
+        }
+        .result-container {
+            .result-table-box{
+                overflow-x: auto;
+                
+                .result-table{
+                    min-width: 550px;
+                    font-size: 14px;
+                }
+            }
         }
     }
 }
