@@ -5,28 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Finance Calculate</title>
         <link rel="stylesheet" href="style.css">
-        <script src="/finance.js"></script>
     </head>
     <body>
         <section class="form-section">
-            <form class="finance-form" onsubmit="return PaymentFunc()">
-                <div class="price-form input-form">
+            <form class="finance-form">
+                <div class="price-form input-form" onsubmit="return PaymentFunc()">
                     <p>ราคา (บาท) :</p>
-                    <input type="number" id="price">
+                    <input type="text" class="numberInput" id="price" placeholder="Ex: 399000">
                 </div>
                 <div class="downcash-form input-form">
                     <p>เปอร์เซ็นต์เงินดาวน์ (%) :</p>
-                    <input type="number" id="downcash">
+                    <input type="number" id="downcash" placeholder="Ex: 10%, 20% ...">
                 </div>
                 <div class="discount-form input-form">
                     <p>ส่วนลด (บาท) :</p>
-                    <input type="number" id="discount">
+                    <input type="text" class="numberInput" id="discount" placeholder="Ex: 12000">
                 </div>
                 <div class="interest-form input-form">
                     <p>อัตราดอกเบี้ย (%) :</p>
-                    <input type="number" id="interest">
+                    <input type="number" id="interest" placeholder="Ex: 3.49%">
                 </div>
-                <input class="submit-form" type="submit" value="Submit"> 
+                <input class="submit-form" type="submit" value="Submit">
             </form>
             <div class="result-container">
                 <h3 class="result-title">ผลลัพธ์</h3>
@@ -79,5 +78,7 @@
                 </div>
             </div>
         </section>
+        <script src="/thousand-sep.js"></script>
+        <script src="/finance.js"></script>
     </body>
 </html>
