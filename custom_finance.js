@@ -24,26 +24,29 @@ for (let i = 0; i < Year.length; i++ ){
 
 
 function PaymentFunc(){
-    const PriceText = document.getElementById('price').value
-    const Price = parseInt(PriceText.replace(/,/g, ''), 10)
-    const PerDown = document.getElementById('percentdowncash').value
-    const DiscountText = document.getElementById('discount').value
-    const Discount = parseInt(DiscountText.replace(/,/g, ''), 10)
-    const InterestInput = document.getElementById('interest').value;
-    const Interest = InterestInput/100;
-    const DownCash = Price * (PerDown/100) - Discount;
-    const Finance = Price - DownCash - Discount;
-    const FinanceInterest = Finance * Interest;
+    let PriceText = document.getElementById('price').value;
+    let PerDown = document.getElementById('percentdowncash').value;
+    let DiscountText = document.getElementById('discount').value;
+    let InterestInput = document.getElementById('interest').value;
+    let Price = parseInt(PriceText.replace(/,/g, ''), 10);
+    let Discount = parseInt(DiscountText.replace(/,/g, ''), 10);
+    let Interest = InterestInput/100;
+    let DownCash = Price * (PerDown/100) - Discount;
+    let Finance = Price - DownCash - Discount;
+    let FinanceInterest = Finance * Interest;
 
     console.log(`เงินดาวน์ทั้งหมด = ${DownCash} บาท`);
     console.log(`ยอดจัดไฟแนนซ์ = ${Finance} บาท`);
     console.log(`ยอดจัด * ดอกเบี้ย = ${FinanceInterest} บาท/ปี`);
-
-    [2, 3, 4].forEach(year => {
-        const AllInterest = FinanceInterest * year;
-        const AllFinance = Finance + AllInterest;
-        const Payment = AllFinance / (year * 12);
-        console.log(`ค่างวด ${year * 12} เดือน ${Math.ceil(Payment)} บาท`);
+    document.getElementById('row-5').innerHTML += `<td>${DownCash}</td>`;
+    document.getElementById('row-5').innerHTML += `<td>${PerDown}%</td>`;
+    
+    [2, 3, 4, 5].forEach(year => {
+        let AllInterest = FinanceInterest * year;
+        let AllFinance = Finance + AllInterest;
+        let Payment = AllFinance / (year * 12);
+        // console.log(`ค่างวด ${year * 12} เดือน ${Math.ceil(Payment)} บาท`);
+        document.getElementById('row-5').innerHTML += `<td>${Math.ceil(Payment)}</td>`;
     });
 
     return false;

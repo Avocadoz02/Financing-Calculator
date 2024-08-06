@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Finance Calculate</title>
         <link rel="stylesheet" href="style.css">
-        <script src="/finance.js"></script>
+        <script src="/custom_finance.js"></script>
+        <script src="/fig_finance.js"></script>
     </head>
     <body>
         <section class="form-section">
@@ -16,7 +17,7 @@
                 </div>
                 <div class="downcash-form input-form">
                     <p>เปอร์เซ็นต์เงินดาวน์ (%) :</p>
-                    <input type="number" id="percentdowncash" placeholder="Ex: 10%, 20% ...">
+                    <input type="number" id="percentdowncash" placeholder="Ex: 10, 20 ...">
                 </div>
                 <div class="discount-form input-form">
                     <p>ส่วนลด (บาท) :</p>
@@ -24,7 +25,7 @@
                 </div>
                 <div class="interest-form input-form">
                     <p>อัตราดอกเบี้ย (%) :</p>
-                    <input type="number" step="0.01" id="interest" placeholder="Ex: 3.49%">
+                    <input type="number" step="0.01" id="interest" placeholder="Ex: 3.49, 4, 5">
                 </div>
                 <input class="submit-form" type="submit" value="Submit">
             </form>
@@ -74,6 +75,8 @@
                             <td>Germany</td>
                             <td>Germany</td>
                             <td>Germany</td>
+                        </tr>
+                        <tr id="row-5" class="custom-row row">
                         </tr>
                     </table>
                 </div>
