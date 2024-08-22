@@ -38,6 +38,8 @@ function PaymentFunc(){
     console.log(`เงินดาวน์ทั้งหมด = ${DownCash} บาท`);
     console.log(`ยอดจัดไฟแนนซ์ = ${Finance} บาท`);
     console.log(`ยอดจัด * ดอกเบี้ย = ${FinanceInterest} บาท/ปี`);
+
+    document.getElementById('row-5').innerHTML = '';
     document.getElementById('row-5').innerHTML += `<td>${DownCash}</td>`;
     document.getElementById('row-5').innerHTML += `<td>${PerDown}%</td>`;
     
@@ -45,15 +47,8 @@ function PaymentFunc(){
         let AllInterest = FinanceInterest * year;
         let AllFinance = Finance + AllInterest;
         let Payment = AllFinance / (year * 12);
-        // console.log(`ค่างวด ${year * 12} เดือน ${Math.ceil(Payment)} บาท`);
         document.getElementById('row-5').innerHTML += `<td>${Math.ceil(Payment)}</td>`;
     });
 
     return false;
 }
-
-// console.log(`เงินดาวน์ทั้งหมด = ${DownCash} บาท`);
-// console.log(`ยอดจัดไฟแนนซ์ = ${Finance} บาท`);
-// console.log(`ยอดจัด * ดอกเบี้ย = ${FinanceInterest} บาท/ปี`);
-
-// PaymentFunc();
