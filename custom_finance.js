@@ -22,7 +22,6 @@ for (let i = 0; i < Year.length; i++ ){
 }
 */
 
-
 function PaymentFunc(){
     let PriceText = document.getElementById('price').value;
     let PerDown = document.getElementById('percentdowncash').value;
@@ -35,13 +34,10 @@ function PaymentFunc(){
     let Finance = Price - DownCash - Discount;
     let FinanceInterest = Finance * Interest;
 
-    console.log(`เงินดาวน์ทั้งหมด = ${DownCash} บาท`);
-    console.log(`ยอดจัดไฟแนนซ์ = ${Finance} บาท`);
-    console.log(`ยอดจัด * ดอกเบี้ย = ${FinanceInterest} บาท/ปี`);
-
     document.getElementById('row-5').innerHTML = '';
     document.getElementById('row-5').innerHTML += `<td>${DownCash}</td>`;
     document.getElementById('row-5').innerHTML += `<td>${PerDown}%</td>`;
+    document.getElementById('row-5').innerHTML += `<td>${InterestInput}%</td>`;
     
     [2, 3, 4, 5].forEach(year => {
         let AllInterest = FinanceInterest * year;
