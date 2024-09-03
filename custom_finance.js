@@ -23,27 +23,47 @@ for (let i = 0; i < Year.length; i++ ){
 */
 
 function PaymentFunc(){
-    let PriceText = document.getElementById('price').value;
-    let PerDown = document.getElementById('percentdowncash').value;
-    let DiscountText = document.getElementById('discount').value;
-    let InterestInput = document.getElementById('interest').value;
-    let Price = parseInt(PriceText.replace(/,/g, ''), 10);
-    let Discount = parseInt(DiscountText.replace(/,/g, ''), 10);
-    let Interest = InterestInput/100;
-    let DownCash = Price * (PerDown/100) - Discount;
-    let Finance = Price - DownCash - Discount;
-    let FinanceInterest = Finance * Interest;
+    let priceText = document.getElementById('price').value;
+    let perDown = document.getElementById('percentdowncash').value;
+    let discountText = document.getElementById('discount').value;
+    let interestInput = document.getElementById('interest').value;
+    let price = parseInt(priceText.replace(/,/g, ''), 10);
+    let discount = parseInt(discountText.replace(/,/g, ''), 10);
+    let interest = interestInput/100;
+    let downCash = price * (perDown/100);
+    let downCashDiscount = downCash - discount;
+    let finance = price - downCash;
+    let financeInterest = finance * interest;
+
+    // const rowAmount = 4;
+    // for (let i = 0; i <= rowAmount; i++){
+    //     const rowFig = document.getElementById(`row-${i}`)
+    //     console.log(rowFig)
+    //     rowFig.innerHTML = '';
+    //     rowFig.innerHTML += `<td class="downcash">${downCashDiscount} <span>${downCash}</span></td> 
+    //                         <td>${perDown}%</td>
+    //                         <td>${interestInput}%</td>`
+    //     [2, 3, 4, 5].forEach(yearFig => {
+    //         let paymentFig = (finance + (financeInterest * yearFig)) / (yearFig * 12);
+    //         rowFig.innerHTML += `<td class="monthly-payment">${Math.ceil(paymentFig)}</td>`;
+    //     });
+    // }
 
     document.getElementById('row-5').innerHTML = '';
-    document.getElementById('row-5').innerHTML += `<td>${DownCash}</td>`;
-    document.getElementById('row-5').innerHTML += `<td>${PerDown}%</td>`;
-    document.getElementById('row-5').innerHTML += `<td>${InterestInput}%</td>`;
-    
+    document.getElementById('row-5').innerHTML += `<td class="downcash">${downCashDiscount} <span>${downCash}</span></td> 
+                                                    <td>${perDown}%</td>
+                                                    <td>${interestInput}%</td>`;
     [2, 3, 4, 5].forEach(year => {
-        let AllInterest = FinanceInterest * year;
-        let AllFinance = Finance + AllInterest;
-        let Payment = AllFinance / (year * 12);
-        document.getElementById('row-5').innerHTML += `<td>${Math.ceil(Payment)}</td>`;
+        let allInterest = financeInterest * year;
+        let allFinance = finance + allInterest;
+        let payment = allFinance / (year * 12);
+        document.getElementById('row-5').innerHTML += `<td class="monthly-payment">${Math.ceil(payment)}</td>`;
+    });
+
+
+    document.querySelectorAll(".row td").forEach(element => {
+        const priceSeparate = element.innerText.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        element.innerHTML = priceSeparate;
     });
 
     return false;
