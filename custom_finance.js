@@ -35,19 +35,20 @@ function PaymentFunc(){
     let finance = price - downCash;
     let financeInterest = finance * interest;
 
-    // const rowAmount = 4;
-    // for (let i = 0; i <= rowAmount; i++){
-    //     const rowFig = document.getElementById(`row-${i}`)
-    //     console.log(rowFig)
-    //     rowFig.innerHTML = '';
-    //     rowFig.innerHTML += `<td class="downcash">${downCashDiscount} <span>${downCash}</span></td> 
-    //                         <td>${perDown}%</td>
-    //                         <td>${interestInput}%</td>`
-    //     [2, 3, 4, 5].forEach(yearFig => {
-    //         let paymentFig = (finance + (financeInterest * yearFig)) / (yearFig * 12);
-    //         rowFig.innerHTML += `<td class="monthly-payment">${Math.ceil(paymentFig)}</td>`;
-    //     });
-    // }
+    const rowAmount = [10, 15, 20, 30];
+    for (let index = 0; index < rowAmount.length; index++){
+        console.log("rowAmount[i]", rowAmount[index] )
+        const rowFig = document.getElementById(`row-${index+1}`)
+        let downCashFig = price * (rowAmount[index]/100)
+        let downCashDiscountFig = downCashFig - discount
+        rowFig.innerHTML = `<td class="downcash">${downCashDiscountFig} <span>${downCashFig}</span></td> 
+                            <td>${rowAmount[index]}%</td>
+                            <td>${interestInput}%</td>`
+        // [2, 3, 4, 5].forEach(yearFig => {
+        //     let paymentFig = (finance + (financeInterest * yearFig)) / (yearFig * 12);
+        //     rowFig.innerHTML += `<td class="monthly-payment">${Math.ceil(paymentFig)}</td>`;
+        // });
+    }
 
     document.getElementById('row-5').innerHTML = '';
     document.getElementById('row-5').innerHTML += `<td class="downcash">${downCashDiscount} <span>${downCash}</span></td> 
