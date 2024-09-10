@@ -43,9 +43,6 @@ body{
                 font-weight: 500;
                 line-height: 1em;
             }
-            @media (max-width:767px){
-                p{ font-size: 16px; }
-            }
             input{
                 width: 100%;
                 padding: 8px 16px;
@@ -113,25 +110,25 @@ body{
             text-align: center;
 
             tr{
-                &.table-head th{
-                    font-size: 20px;
-                }
-                @media (max-width:767px){
-                    &.table-head th{
-                        font-size: 18px;
-                    }
-                }
+                &.table-head th{ font-size: 20px;}
+
                 &.table-head , &.table-sub-head{
                     background: linear-gradient(90deg, rgba(82,34,88,1) 0%, rgba(140,48,97,1) 40%, rgba(217,95,89,1) 100%)!important;
                     color: #fff;
                 }
-                &:nth-child(even){
-                    background: #eeeeee;
-                }
+
+                &:nth-child(even){ background: #eeeeee; }
+                
                 &.row{
-                    .downcash span{
+                    .downcash{ 
+                        padding-right: 0;
+                        color: #D95F59;
+                        font-weight: 700; 
+                    }
+                    .downcash-discount{
                         text-decoration: line-through;
                         font-size: 14px;
+                        padding-left: 0;
                     }
                 }
             } 
@@ -154,9 +151,7 @@ body{
         flex-direction: column;
         height: unset;
         
-        .finance-form{
-            min-width: 500px;
-        }
+        .finance-form{ min-width: 500px; }
     }
 }
 @media (max-width:767px){
@@ -165,6 +160,8 @@ body{
         .finance-form{
             min-width: unset;
             width: 100%;
+
+            .input-form p{ font-size: 16px; }
         }
         .result-container {
             .result-table-box{
@@ -173,6 +170,8 @@ body{
                 .result-table{
                     min-width: 550px;
                     font-size: 14px;
+
+                    tr.table-head th{ font-size: 18px; }  
                 }
             }
         }

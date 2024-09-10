@@ -5,26 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Finance Calculate</title>
         <link rel="stylesheet" href="style.css">
-        <script src="/custom_finance.js"></script>
     </head>
     <body>
         <section class="form-section">
             <form class="finance-form" onsubmit="return PaymentFunc()">
                 <div class="price-form input-form">
                     <p>ราคา (บาท) :</p>
-                    <input type="text" class="numberInput" id="price" placeholder="Ex: 399,000">
+                    <input type="text" class="numberInput" id="price" placeholder="Ex: 399,000" required>
                 </div>
                 <div class="downcash-form input-form">
                     <p>เปอร์เซ็นต์เงินดาวน์ (%) :</p>
-                    <input type="number" id="percentdowncash" placeholder="Ex: 10, 20, ...">
+                    <input type="number" id="percentdowncash" placeholder="Ex: 10, 20, ..." required>
                 </div>
                 <div class="discount-form input-form">
                     <p>ส่วนลด (บาท) :</p>
-                    <input type="text" class="numberInput" id="discount" placeholder="Ex: 12,000">
+                    <input type="text" class="numberInput" id="discount" placeholder="Ex: 12,000" required>
                 </div>
                 <div class="interest-form input-form">
                     <p>อัตราดอกเบี้ย (%) :</p>
-                    <input type="number" step="0.01" id="interest" placeholder="Ex: 3.49, 4, ...">
+                    <input type="number" step="0.01" id="interest" placeholder="Ex: 3.49, 4, ..." required>
                 </div>
                 <input class="submit-form" type="submit" value="Submit">
             </form>
@@ -33,8 +32,8 @@
                 <div class="result-table-box">
                     <table id="ResultTable" class="result-table">
                         <tr class="table-head">
-                            <th rowspan="2" style="width: 150px;">เงินดาวน์</th>
-                            <th rowspan="2" style="width: 50px;">%</th>
+                            <th rowspan="2" colspan="2"">เงินดาวน์</th>
+                            <th rowspan="2" style="width: 60px;">%</th>
                             <th rowspan="2" style="width: 80px;">ดอกเบี้ย</th>
                             <th colspan="4">ระยะการผ่อน</th>
                         </tr>
@@ -46,6 +45,7 @@
                         </tr>
                         <tr id="row-1" class="row">
                             <td>-</td>
+                            <td>-</td>
                             <td>10%</td>
                             <td>- %</td>
                             <td>-</td>
@@ -54,6 +54,7 @@
                             <td>-</td>
                         </tr>
                         <tr id="row-2" class="row">
+                            <td>-</td>
                             <td>-</td>
                             <td>15%</td>
                             <td>- %</td>
@@ -64,6 +65,7 @@
                         </tr>
                         <tr id="row-3" class="row">
                             <td>-</td>
+                            <td>-</td>
                             <td>20%</td>
                             <td>- %</td>
                             <td>-</td>
@@ -72,6 +74,7 @@
                             <td>-</td>
                         </tr>
                         <tr id="row-4" class="row">
+                            <td>-</td>
                             <td>-</td>
                             <td>30%</td>
                             <td>- %</td>
